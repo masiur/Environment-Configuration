@@ -58,9 +58,9 @@ server {
 
   location ~ \.php$ {
     fastcgi_pass unix:/run/php/php7.2-fpm.sock;
-    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
-    include fastcgi_params;
-    include snippets/fastcgi-php.conf;
+    #fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+    #include fastcgi_params;
+    #include snippets/fastcgi-php.conf;
   }
 
   location ~ /\.ht {
