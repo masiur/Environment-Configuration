@@ -8,7 +8,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configurat
 
 #### Please run the following command on your Terminal
 ```bash
-bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/lemp_deb_16.04.sh)
+bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/lemp_deb_18.04.sh)
 ```
 
 Inspired By @ratulcse10 
