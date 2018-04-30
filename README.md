@@ -10,14 +10,23 @@ bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configurat
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/lemp_deb_18.04.sh)
 ```
+### Install Node.js 8.* (LTS) on Ubuntu 18.04/16.04
+
+#### Please run the following command on your Terminal
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/node_js_8.9_lts.sh)
+```
+
 #### Install Git flow 
     sudo apt-get install -y git-flow
    
    
 #### Generate SSH Key
-   type enter for all input
-   ssh-keygen
-   cat ~/.ssh/id_rsa.pub
+Type Enter for all Input
+
+    ssh-keygen
+Copy through following command
+    cat ~/.ssh/id_rsa.pub
 
 Inspired By @ratulcse10 
 Maintained by @masiur
