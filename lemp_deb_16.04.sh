@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Welcome to Easy LEMP Stack Setup (Ubuntu 16.04) 1.0"
+echo "Welcome to Easy LEMP Stack Setup (Ubuntu 16.04) 1.1"
 
 echo "Steap:1 [System Update]"
 echo "Update Starts....."
@@ -29,7 +29,7 @@ sudo systemctl start php7.2-fpm
 sudo systemctl enable php7.2-fpm
 
 echo "Step:5 [Install PHPmyadmin]"
-sudo apt-get install phpmyadmin
+sudo apt-get install -y phpmyadmin
 echo -e "PHPmyadmin Installation Completed Successfully\n"
 
 sudo systemctl restart nginx
@@ -94,4 +94,4 @@ sudo mv composer.phar /usr/local/bin/composer
 echo -e "Composer Installation Completed Successfully\n"
 
 
-echo "Thanks  !!! ~ SUST CSE Developer Network (SCDN) - http://scdnlab.com"
+echo "Thanks  !!! ~ Your Lemp config has been successfully done"
