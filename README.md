@@ -26,6 +26,7 @@ Type Enter for all Input
 
     ssh-keygen
 Copy through following command
+
     cat ~/.ssh/id_rsa.pub
 
 Inspired By @ratulcse10 
