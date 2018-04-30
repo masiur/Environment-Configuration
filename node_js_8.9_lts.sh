@@ -12,4 +12,6 @@ echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/source
 sudo apt-get update
 echo "Installing Yarn installation started"
 sudo apt-get install -y yarn
+echo "Updating npm to latest veriosn"
+sudo npm install npm@latest -g
 echo "Thank you"
