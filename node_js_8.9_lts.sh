@@ -9,5 +9,7 @@ sudo apt-get install -y build-essential
 echo "Installing Yarn"
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-sudo apt-get update && sudo apt-get install -y yarn
+sudo apt-get update
+echo "Installing Yarn installation started"
+sudo apt-get install -y yarn
 echo "Thank you"
