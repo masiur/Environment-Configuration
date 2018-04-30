@@ -10,6 +10,9 @@ bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configurat
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/lemp_deb_18.04.sh)
 ```
+#### Install Git flow 
+    sudo apt-get install -y git-flow
+   
 
 Inspired By @ratulcse10 
 Maintained by @masiur
