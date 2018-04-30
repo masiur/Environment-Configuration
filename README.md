@@ -13,6 +13,11 @@ bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configurat
 #### Install Git flow 
     sudo apt-get install -y git-flow
    
+   
+#### Generate SSH Key
+   type enter for all input
+   ssh-keygen
+   cat ~/.ssh/id_rsa.pub
 
 Inspired By @ratulcse10 
 Maintained by @masiur
