@@ -10,7 +10,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configurat
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/lemp_deb_18.04.sh)
 ```
-### Install Node.js 8.* (LTS) on Ubuntu 18.04/16.04
+### Install Node.js 8.* (LTS) & yarn on Ubuntu 18.04/16.04
 
 #### Please run the following command on your Terminal
 ```bash
