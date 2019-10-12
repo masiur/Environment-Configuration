@@ -17,6 +17,11 @@ bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configurat
 bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/node_js_8.9_lts.sh)
 ```
 
+#### Install DB Management Tool (Adminer)
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/deployadminer.sh)
+```
+
 #### Install Git flow 
     sudo apt-get install -y git-flow
    
