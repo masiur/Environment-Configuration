@@ -13,7 +13,7 @@ sudo mv latest-mysql-en.php db.php
 echo -e "Dowloaded and Renamed Successfully\n"
 
 echo "Creating a Configuration File for Adminer in sites-enabled directory"
-cat > /etc/nginx/sites-enabled/db-adminer <<EOF
+sudo cat > /etc/nginx/sites-enabled/db-adminer <<EOF
 
 server {
   listen 51;
