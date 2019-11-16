@@ -11,8 +11,11 @@ echo "Step:2 [Install Apache2]"
 sudo apt-get install -y apache2
 echo -e "NGINX Installation Completed Successfully\n"
 
+sudo ufw allow in "Apache Full"
+
 echo "Step:3 [Install MySQL]"
-sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
+sudo apt install -y mysql-server
+
 echo -e "MySQL Installation Completed Successfully\n"
 
 echo "Step:4 [Install PHP7.2]"
