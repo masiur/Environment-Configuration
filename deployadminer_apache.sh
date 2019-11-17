@@ -15,7 +15,7 @@ echo -e "Dowloaded and Renamed Successfully\n"
 echo "Creating a Configuration File for Adminer in sites-enabled directory"
 cd /etc/apache2/sites-available
 sudo wget https://raw.githubusercontent.com/masiur/Environment-Configuration/master/src/adminer_apache.conf
-sudo systemctl reload apache2
+sudo a2ensite adminer_apache.conf
 cd ~
 echo "Configuration File Ready"
 
