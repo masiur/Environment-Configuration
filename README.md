@@ -25,8 +25,13 @@ bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configurat
 ```
 
 #### Install DB Management Tool (Adminer)
+##### For NGINX
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/deployadminer.sh)
+```
+##### For Apache
+```bash
+bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/deployadminer_apache.sh)
 ```
 
 #### Install Git flow 
