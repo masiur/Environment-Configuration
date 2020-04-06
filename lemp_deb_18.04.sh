@@ -20,20 +20,18 @@ echo "Step:4 [Allow nginx in Firewall]"
 sudo ufw allow in "Nginx Full"
 echo -e "Done."
 
+
 echo "Copying IP of this server"
+sudo apt-get install -y curl
 ip=`curl -s https://api.ipify.org`
 
-echo "Step:4 [Allow nginx in Firewall]"
-sudo apt-get install -y mysql-server mysql-client libmysqlclient-dev
+echo "Step:5 [Install MySQL]" 
+sudo apt install mysql-server
+sudo mysql_secure_installation
 echo -e "MySQL Installation Completed Successfully\n"
 
-echo "Step:5 [Install PHP7.2]"
-sudo apt-get install -y software-properties-common
-sudo add-apt-repository ppa:ondrej/php -y 
-sudo apt-get -y update
-sudo apt-get install -y php7.2
-sudo apt-cache search php7.2
-sudo apt-get install -y php7.2-cli php7.2-fpm php7.2-mysql php7.2-curl php7.2-json php7.2-cgi libphp7.2-embed libapache2-mod-php7.2 php7.2-zip php7.2-mbstring php7.2-xml php7.2-intl
+echo "Step:7 [Install PHP7.2]"
+sudo apt install -y php-fpm php-mysql
 
 echo -e "PHP 7.2 Installation Completed Successfully\n"
 
@@ -53,7 +51,7 @@ sudo rm /etc/nginx/sites-enabled/default
 sudo echo 'server {
     listen 80 default_server;
     listen [::]:80 default_server;
-    root /var/www;
+    root /var/www/html;
     index index.php index.html index.htm index.nginx-debian.html;
     server_name '$ip';
     location / {
@@ -69,7 +67,7 @@ sudo echo 'server {
 }' > /etc/nginx/sites-available/default
 
 sudo nginx -t
-sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enable/
+sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 sudo systemctl reload nginx
 
 echo -e "Downloading latest Adminer\n"
@@ -82,10 +80,10 @@ cd /etc/nginx/sites-available
 sudo wget https://raw.githubusercontent.com/masiur/Environment-Configuration/master/src/db-adminer
 sudo ln -s /etc/nginx/sites-available/db-adminer /etc/nginx/sites-enabled/
 sudo systemctl reload nginx
-sudo ufw allow 50
+sudo ufw allow 51
 cd ~
 
-sudo cat > /var/www/index.html <<END
+sudo cat > /var/www/html/index.html <<END
 <!DOCTYPE html>
 <html>
 <head>
@@ -116,9 +114,7 @@ END
 
 echo "Configuration File Ready"
 
-echo "Step:6 [Install curl]"
-sudo apt-get install -y curl
-echo -e "curl Installation Completed Successfully\n"
+
 
 echo "Step:7 [Install Git]"
 sudo add-apt-repository ppa:git-core/ppa -y
@@ -136,13 +132,15 @@ curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 echo -e "Composer Installation Completed Successfully\n"
 
+sudo ufw enable
+
 echo "+-------------------------------------------+"
 echo "|    ${b}${A}Finish Auto Install and Setup LEMP${R}     |"
 echo "|                                           |"
 echo "| Web Site: http://$ip/"
 echo "|                                           |"
 echo "| Database Adminer: http://$ip:50"
-echo "| User:${E}root${R} || Pass:${E}$pass${R}"
+echo "| User:root || Pass"
 echo "|                                           |"
 echo "| Test PHP:http://$ip/info.php"
 echo "|                                           |"
