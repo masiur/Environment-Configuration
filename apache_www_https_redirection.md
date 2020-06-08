@@ -1,5 +1,6 @@
- ### www & non-www redirect with https
 
+ ### www & non-www redirect with https
+![enter image description here](https://github.com/masiur/Environment-Configuration/blob/master/files/redirection.jpg)
  #### Confguratin file for accepting http request and redirect
     # /etc/apache2/sites-available/sustcse12.xyz.conf
     # Accept non-www or www http request
