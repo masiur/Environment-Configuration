@@ -4,7 +4,7 @@ echo "Welcome to Lightweight Database UI Management (Adminer for PHP) Setup on L
 
 echo "Steap:1 [System Update]"
 echo "Update Starts....."
-#sudo apt-get update
+sudo yum update
 echo -e "System Update Completed Successfully\n"
 
 echo -e "Downloading latest Adminer\n"
@@ -17,5 +17,6 @@ cd /etc/httpd/conf.d/
 sudo wget https://raw.githubusercontent.com/masiur/Environment-Configuration/master/src/adminer_centos_apache.conf
 sudo systemctl restart httpd
 cd ~
-echo "Configuration File Ready"
+IP=curl -4 icanhazip.com
+echo "Configuration File Ready. visit http://$IP:999"
 
