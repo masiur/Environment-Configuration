@@ -17,6 +17,6 @@ cd /etc/httpd/conf.d/
 sudo wget https://raw.githubusercontent.com/masiur/Environment-Configuration/master/src/adminer_centos_apache.conf
 sudo systemctl restart httpd
 cd ~
-IP=curl icanhazip.com
-echo "Configuration File Ready. visit http://$IP:999"
+PUBLIC_IP=`wget http://ipecho.net/plain -O - -q ; echo`
+echo "Configuration File Ready. visit http://$PUBLIC_IP:9999"
 
