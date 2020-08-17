@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # Installing the Apache Web Server
 sudo dnf install httpd
