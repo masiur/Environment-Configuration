@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Installing the Apache Web Server
+sudo dnf install httpd
+sudo systemctl start httpd
+
+#Installing MariaDB
+sudo dnf install mariadb-server
+sudo systemctl start mariadb
+sudo mysql_secure_installation
+
+#Installing PHP
+sudo dnf install dnf-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
+sudo dnf module list php
+
+sudo dnf module reset php
+sudo dnf module enable php:remi-7.4
+
+sudo dnf install php php-opcache php-gd php-curl php-mysqlnd
+sudo systemctl restart httpd
+
+
+#Installing Git
+sudo dnf install git -y
+
+#Installing Composer
+sudo wget https://getcomposer.org/installer -O composer-installer.php
+sudo php  composer-installer.php --filename=composer --install-dir=/usr/local/bin
+
+
+
+
+
+
