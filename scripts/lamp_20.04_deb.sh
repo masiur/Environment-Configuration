@@ -12,17 +12,7 @@ PASS_MYSQL_ROOT=`openssl rand -base64 8` # this you need to save
 PASS_PHPMYADMIN_APP=`openssl rand -base64 8` # can be random, won't be used again
 PASS_PHPMYADMIN_ROOT="${PASS_MYSQL_ROOT}" # Your MySQL root pass
 
-systemUpdate
-installApache
-allowFirewall
-installingPHP
-installingMySQL
-securingMySQL
-installingPHPMyadmin
-restartApache
-configTest
-intallGit
-installComposer
+
 
 systemUpdate() {
     echo "Steap:1 [System Update]"
@@ -111,11 +101,22 @@ intallGit() {
     echo -e "Git Installation Completed Successfully\n"
 }
 installComposer() {
-    echo "Step:9 [Install Composer]"
+    echo "Installing Composer"
     curl -sS https://getcomposer.org/installer | php
     sudo mv composer.phar /usr/local/bin/composer
     echo -e "Composer Installation Completed Successfully\n"
 }
 
+systemUpdate
+installApache
+allowFirewall
+installingPHP
+installingMySQL
+securingMySQL
+installingPHPMyadmin
+restartApache
+configTest
+intallGit
+installComposer
 
 echo -e "Thanks  !!! ~ Your LAMP config has been successfully done. MySQL password is: ${PASS_MYSQL_ROOT}"
