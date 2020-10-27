@@ -55,13 +55,13 @@ securingMySQL() {
 	echo -e "\n ${Cyan} Securing MySQL.. ${Color_Off}"
 	
 	mysql --user=root --password=${PASS_MYSQL_ROOT} << EOFMYSQLSECURE
-DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
-DELETE FROM mysql.user WHERE User='';
-DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
-FLUSH PRIVILEGES;
-EOFMYSQLSECURE
+	DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
+	DELETE FROM mysql.user WHERE User='';
+	DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
+	FLUSH PRIVILEGES;
+	EOFMYSQLSECURE
 
-# NOTE: Skipped validate_password because it'll cause issues with the generated password in this script
+	# NOTE: Skipped validate_password because it'll cause issues with the generated password in this script
 }
 
 installingPHPMyadmin() {
@@ -79,13 +79,6 @@ installingPHPMyadmin() {
 	DEBIAN_FRONTEND=noninteractive sudo apt -qy install phpmyadmin
 }
 
-
-
-installingPHPMyadmin() {
-    echo "Now Install PHPmyadmin"
-    sudo apt-get install -y phpmyadmin
-    echo -e "PHPmyadmin Installation Completed Successfully\n"
-}
 
 restartApache() {
     sudo systemctl restart apache2
@@ -119,4 +112,4 @@ configTest
 intallGit
 installComposer
 
-echo -e "Thanks  !!! ~ Your LAMP config has been successfully done. MySQL password is: ${PASS_MYSQL_ROOT}"
+echo -e "Your LAMP config has been successfully done. MySQL password is: ${PASS_MYSQL_ROOT}"
