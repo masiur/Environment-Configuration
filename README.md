@@ -1,9 +1,15 @@
-### Install LEMP Stack on Ubuntu 18.04
+### Install LAMP Stack on Ubuntu/Debian 20.04
+
+#### Please run the following command on your Terminal
+```bash
+bash <(wget -qO- https://git.io/JTPWD)
+```
 
 #### Please run the following command on your Terminal
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/lemp_deb_18.04.sh)
 ```
+
 ### Install LAMP Stack on Ubuntu 18.04
 
 #### Please run the following command on your Terminal
