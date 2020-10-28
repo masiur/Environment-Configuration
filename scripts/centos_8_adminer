@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Welcome to Lightweight Database UI Management (Adminer for PHP) Setup on LEMP Stack Setup (Ubuntu 16.04)"
+echo "Welcome to Lightweight Database UI Management (Adminer for PHP) Setup on LAMP Stack Setup (CentOS 7)"
 
 echo "Steap:1 [System Update]"
 echo "Update Starts....."
@@ -17,6 +17,7 @@ cd /etc/httpd/conf.d/
 sudo wget https://raw.githubusercontent.com/masiur/Environment-Configuration/master/src/adminer_centos_apache.conf
 sudo systemctl restart httpd
 cd ~
+
 PUBLIC_IP=`wget http://ipecho.net/plain -O - -q ; echo`
 echo "Configuration File Ready. visit http://$PUBLIC_IP:9999"
 
