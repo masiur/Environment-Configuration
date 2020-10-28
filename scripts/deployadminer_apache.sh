@@ -24,4 +24,4 @@ sudo systemctl reload apache2
 
 YOURIP=`wget -qO- ifconfig.co`
 
-echo "Thanks  !!! ~ Your DB Management istallation has been successfully done. Visit to http://{$YOURIP}:9999 or YOURDOMAIN:9999"
+echo "Thanks  !!! ~ Your DB Management istallation has been successfully done. Visit to http://$YOURIP:9999 or YOURDOMAIN:9999"
