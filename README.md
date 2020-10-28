@@ -52,5 +52,5 @@ Copy through following command
 
     cat ~/.ssh/id_rsa.pub
 
-Inspired By @ratulcse10 
+
 Maintained by @masiur
