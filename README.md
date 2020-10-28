@@ -37,7 +37,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configurat
 ```
 ##### For Apache
 ```bash
-bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/scripts/deployadminer_apache.sh)
+bash <(wget -qO- https://git.io/JTXVY)
 ```
 
 #### Install Git flow 
