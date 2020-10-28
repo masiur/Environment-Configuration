@@ -52,21 +52,27 @@ installingMySQL() {
 
 securingMySQL() {
 	# secure MySQL install
-	echo -e "\n ${Cyan} Securing MySQL.. ${Color_Off}"
-	
-	mysql --user=root --password=${PASS_MYSQL_ROOT} << EOFMYSQLSECURE
-	DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');
-	DELETE FROM mysql.user WHERE User='';
-	DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';
-	FLUSH PRIVILEGES;
-	EOFMYSQLSECURE
+	echo -e "Securing MySQL.. "
 
-	# NOTE: Skipped validate_password because it'll cause issues with the generated password in this script
+	sudo mysql -e "SET PASSWORD FOR root@localhost = PASSWORD(${PASS_MYSQL_ROOT});FLUSH PRIVILEGES;"
+
+	sudo mysql -e "DELETE FROM mysql.user WHERE User='';"
+
+	sudo mysql -e "DELETE FROM mysql.user WHERE User='root' AND Host NOT IN ('localhost', '127.0.0.1', '::1');"
+
+	sudo mysql -e "DROP DATABASE test;DELETE FROM mysql.db WHERE Db='test' OR Db='test_%';"
+
+	#sudo mysql -u root -psomething -e "CREATE USER 'ubuntu'@'localhost' IDENTIFIED BY 'something';GRANT ALL PRIVILEGES ON *.* TO 'ubuntu'@'localhost';FLUSH PRIVILEGES;"
+}
+
+installingAdminer() {
+	bash <(wget -qO- https://raw.githubusercontent.com/masiur/Environment-Configuration/master/scripts/deployadminer_apache.sh)
 }
 
 installingPHPMyadmin() {
-	# PHPMyAdmin
-	echo -e "Installing PHPMyAdmin.."
+	# PHPMyAdmin is not used till now
+	<<COMMENT
+	 echo -e "Installing PHPMyAdmin.."
 	
 	# set answers with `debconf-set-selections` so you don't have to enter it in prompt and the script continues
 	sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/reconfigure-webserver multiselect apache2" # Select Web Server
@@ -77,6 +83,7 @@ installingPHPMyadmin() {
 	sudo debconf-set-selections <<< "phpmyadmin phpmyadmin/internal/skip-preseed boolean true"
 
 	DEBIAN_FRONTEND=noninteractive sudo apt -qy install phpmyadmin
+	COMMENT
 }
 
 
@@ -106,10 +113,15 @@ allowFirewall
 installingPHP
 installingMySQL
 securingMySQL
-installingPHPMyadmin
+#installingPHPMyadmin
+installingAdminer
 restartApache
 configTest
 intallGit
 installComposer
+
+# Gratitude To https://www.vic-l.com/automate-mysql-secure-installation-using-bash/
+
+# Link Saved https://bertvv.github.io/notes-to-self/2015/11/16/automating-mysql_secure_installation/
 
 echo -e "Your LAMP config has been successfully done. MySQL password is: ${PASS_MYSQL_ROOT}"
