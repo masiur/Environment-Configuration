@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We're on a Break!</title>
+
+    <!-- Twemoji CSS for rendering emojis -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/13.1.0/twemoji.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            text-align: center;
+            padding: 100px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            font-size: 50px;
+            color: #2c3e50;
+        }
+        p {
+            font-size: 24px;
+            color: #7f8c8d;
+        }
+        body {
+            font: 20px Helvetica, sans-serif;
+            color: #333;
+        }
+        article {
+            display: block;
+            text-align: center;
+            width: 650px;
+            margin: 0 auto;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #333;
+            text-decoration: none;
+        }
+        .center-image {
+            display: block;
+            margin: 0 auto;
+            width: 300px; /* Adjust the width as needed */
+        }
+        .twemoji {
+            height: 1em;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <img class="center-image" src="https://i.giphy.com/MF1aaZpwtmqUa2FoCa.webp" alt="maintenance image">
+        <h1>⚙️ We’ll be back soon! 🛠️</h1>
+        <p>Sorry for the inconvenience, but we’re giving the site a little TLC right now. 🌱<br> We’ll be back online shortly, fresher than ever! 🚀</p>
+        
+        <!-- <p>In the meantime, why not check out <a href="https://ai.authlab.io">our updates</a>?</p> -->
+    </article>
+
+    <!-- Twemoji JS for converting emojis -->
+    <script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"></script>
+    <script>
+        // Parse and replace all native emojis with Twemoji
+        twemoji.parse(document.body, {
+            folder: 'svg',
+            ext: '.svg'
+        });
+    </script>
+</body>
+</html>
