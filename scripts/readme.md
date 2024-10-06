@@ -34,7 +34,7 @@ sudo nano /usr/local/bin/mysite.io
 
 ### Step 3: Add the Script Logic
 Add the following code to the script file to handle both the `down` and `up` commands:
-[mysite.io](./scripts/mysite.io)
+[mysite.io](./mysite.io)
 
 ### Step 4: Make the Script Executable
 
