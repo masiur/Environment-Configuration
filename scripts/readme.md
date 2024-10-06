@@ -1,7 +1,14 @@
-## Congifure Maintenance Mode Easily in Nginx 
+# Configure Maintenance Mode Easily in nginx 
 
 
-### Step 1: Config nginx
+### Step 1: Ready html
+
+    sudo nano /var/www/html/maintenance.html
+
+Copy and paste from here
+[maintenance.html](./../htmls/maintenance.html)
+
+### Step 2: Config nginx
 
     sudo nano /etc/nginx/sites-available/mysite.io
 
@@ -27,18 +34,18 @@ server {
 ```
 
 
-### Step 2: Create a Bash Script
+### Step 3: Create a Bash Script
 Create a new bash script in the /usr/local/bin/ directory (or any directory in your system path) to manage the maintenance mode:
 
 ```bash
 sudo nano /usr/local/bin/mysite.io
 ```
 
-### Step 3: Add the Script Logic
+### Step 4: Add the Script Logic
 Add the following code to the script file to handle both the `down` and `up` commands:
 [mysite.io](./mysite.io)
 
-### Step 4: Make the Script Executable
+### Step 5: Make the Script Executable
 
 Give the script execution permissions:
 
@@ -46,7 +53,7 @@ Give the script execution permissions:
 sudo chmod +x /usr/local/bin/mysite.io` 
 ```
 
-### Step 5: Using the Script
+### Step 6: Using the Script
 
 Now you can easily toggle the maintenance mode by using the following commands:
 
@@ -60,4 +67,4 @@ Now you can easily toggle the maintenance mode by using the following commands:
     ```bash
     mysite.io up
     ```
-### Step 5: Done ✅
+### Step 7: Done ✅
